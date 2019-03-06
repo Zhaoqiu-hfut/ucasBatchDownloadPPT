@@ -284,7 +284,7 @@ if __name__ == '__main__':
     for (oneFile, saveFileName) in zip(fullFileUrl, fullFileName):
         current = current + 1
         progress = '已经完成' + str(int(current*100/fileNumber)) + '%'
-        print('\r{}'.format(progress))
+        print('\r{}'.format(progress), end='')
         sys.stdout.flush()
         file = ses.get(oneFile)
         # if saveFileName[0] != '/':
