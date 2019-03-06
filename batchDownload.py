@@ -11,6 +11,8 @@ randomUrl = 'http://sep.ucas.ac.cn/changePic'
 
 appStoreUrl = 'http://sep.ucas.ac.cn/appStore'
 
+CourseUrl = 'http://sep.ucas.ac.cn/portal/site/16/801'
+
 headers = {
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8",
     "Accept-Encoding": "gzip,deflate",
@@ -45,7 +47,7 @@ loginData = {
     'certCode':'',
     'sb':'sb'
 }
-
+# 获取院系课程
 subDirData = {
     'source':0,
     'collectionId':'/group/155710/White.Geochemstry/',
@@ -88,15 +90,6 @@ def getAllDir(HTML):
         allDir.append(value)
     return allDir
 
-# def AllsubDir(dirName):
-#     '''
-#
-#     :type dirName: str
-#     :param dirName:
-#     :return:
-#     '''
-#     temp = []
-#     return temp
 
 # 获得某文件夹下的所有文件链接
 def getSubFileUrl(HTML, ID):
@@ -109,8 +102,6 @@ def getSubFileUrl(HTML, ID):
     若返回空列表，则该文件夹下为空
     '''
     NewFileUrl = []
-    # SubDirHtml = ses.post(PostUrl, headers=headers, data=subDirData)
-    # SubDirHtmlText = SubDirHtml.text
     fileRE = 'http://course.ucas.ac.cn/access/content/group/' + ID + '/(.*?)\" target='
     fileNames = re.findall(fileRE, HTML)
     fileNames = list(set(fileNames))
@@ -159,6 +150,7 @@ def searchAll(ses, PostUrl, dirName, ID):
 
 if __name__ == '__main__':
 
+    print('请使用校园网！')
     userName = input('用户名：')
     pwd = input('密码：')
 
