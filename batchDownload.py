@@ -45,9 +45,7 @@ loginData = {
     'certCode':'',
     'sb':'sb'
 }
- # 全局重复访问时间间隔
-pauseSec = 2.5
-# 获取院系课程
+
 subDirData = {
     'source':0,
     'collectionId':'/group/155710/White.Geochemstry/',
