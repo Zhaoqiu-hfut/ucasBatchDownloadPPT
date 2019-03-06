@@ -236,7 +236,7 @@ if __name__ == '__main__':
         te = head + u
         courseDetailUrlList.append(te)
 
-    CourseContentHtml = ses.get(courseDetailUrlList[0])
+    CourseContentHtml = ses.get(courseDetailUrlList[int(selectedId)])
     CourseContentHtmlText = CourseContentHtml.text
 
     # 提取资源url
@@ -258,10 +258,10 @@ if __name__ == '__main__':
 
 
 
-    newFolder = input('××××××××输入新建下载文件夹：')
+    newFolder = input('****************输入新建下载文件夹：')
     while os.path.isdir(newFolder):
-        print('×××××××文件夹已存在！请重新输入：')
-        newFolder = input('××××××××输入新建下载文件夹：')
+        print('**************文件夹已存在！请重新输入：')
+        newFolder = input('**************输入新建下载文件夹：')
 
     os.mkdir(newFolder)
     maxDir = '/'
