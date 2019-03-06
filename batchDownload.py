@@ -116,7 +116,7 @@ def getSubFileUrl(HTML, ID):
     return (NewFileUrl, fileNamesNo20)
 
 
-# 深度优先
+# 深度优先，栈处理文件夹
 def searchAll(ses, PostUrl, dirName, ID):
     '''
     :type dirName: str
